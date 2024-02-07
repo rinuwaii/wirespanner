@@ -2,10 +2,16 @@
 ### A plugin for Roblox Studio that lets you build ropes and wires easier
 
 DevForum Link: TBD
+[Download Beta Here](https://github.com/rinuwaii/wirespanner/releases/latest)
 
 > [!WARNING]
 > !! THIS IS NOT FINISHED YET !!
 > Expect issues!
 
-Example
-https://github.com/rinuwaii/wirespanner/assets/36645011/50c856a1-5885-4ecb-8ce4-e9dba30a3237
+Please do not release this plugin! It is not finished and it is not yours!!
+
+## Example:
+![Preview Video](/assets/preview.mp4)
+
+## Credits:
+[Stravant](https://github.com/stravant) for the [SharedToolbar](/src/modules/SharedToolbar.lua) module
