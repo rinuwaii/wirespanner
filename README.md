@@ -1,4 +1,4 @@
-# Wirespanner - A Roblox Studio that lets you build ropes / wires easier
+# Wirespanner - A Roblox Studio ropes / wires tool.
 
 > [!WARNING]
 > THIS IS NOT FINISHED YET! Expect issues!
