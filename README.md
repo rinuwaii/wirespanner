@@ -10,8 +10,8 @@ DevForum Link: TBD
 
 Please do not publish this plugin! It is not finished and it is not yours!!
 
-## Example:
-![Preview Video](/assets/preview.mp4)
+## Example
+https://github.com/rinuwaii/wirespanner/assets/36645011/50c856a1-5885-4ecb-8ce4-e9dba30a3237
 
-## Credits:
+## Credits
 [stravant](https://github.com/stravant) for the [SharedToolbar](/src/modules/SharedToolbar.lua) module
