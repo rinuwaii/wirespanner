@@ -1,6 +1,8 @@
-= Wirespanner - A Roblox Studio ropes / wires tool =
+__NOTOC__
 
-{| align="center"
+[[File:assets/logo.png]]
+
+{|
 ! scope="row" | WARNING
 ! scope="row" | This is not finished yet! Expect issues!
 |}
@@ -89,12 +91,11 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |}
 
 == Examples ==
-=== Video ===
-[[File:https://github.com/rinuwaii/wirespanner/assets/36645011/50c856a1-5885-4ecb-8ce4-e9dba30a3237]]
-
+=== Model layout for Matching mode ===
+[[File:assets/exampleLayoutA.png]]
 <br clear="left"/>
-=== How to lay out the models ===
-[[File:assets/exampleLayout.png]]
+=== Model layout for _A to _B mode ===
+[[File:assets/exampleLayoutB.png]]
 <br clear="left"/>
 
 == Credits ==
