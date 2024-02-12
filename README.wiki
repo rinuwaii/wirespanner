@@ -3,16 +3,17 @@ __NOTOC__
 [[File:assets/logo.png]]
 
 {|
-! scope="row" | WARNING
-! scope="row" | This is not finished yet! Expect issues!
+! scope="row" | WARNING: This is not finished yet! Expect issues!
 |}
 
-[https://github.com/rinuwaii/wirespanner/releases/latest Download Beta Here]
+[[https://github.com/rinuwaii/wirespanner/releases/latest|Download Beta Here]]
+
 DevForum Link: TBD
 
 Please do not publish this plugin! It is not finished and it is not yours!!
 
 == Options Breakdown ==
+=== Main ===
 {|
 ! Option
 ! Property
@@ -20,7 +21,7 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |-
 |Mode
 |<code>N/A</code>
-|See [[README.wiki#mode-toggle|Mode Toggle]]
+|See [[?mode-toggle|Mode Toggle]]
 |- 
 ! scope="row" colspan="3" | Wire
 |-
@@ -40,7 +41,7 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |-
 |Slack Mode
 |<code>N/A</code>
-|See [[README.wiki#slack-toggle|Slack Toggle]]
+|See [[?slack-toggle|Slack Toggle]]
 |-
 |Add Range
 |<code>RopeConstraint.Length</code>
@@ -53,7 +54,7 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |Automatically apply changes to wire options to all spans in the current wire.
 |}
 
-== Mode Toggle ==
+=== Mode Toggle ===
 {|
 ! Mode
 ! Description
@@ -71,7 +72,7 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |Click on two models, and it will find attachments that are named <name>_A and <name>_B (where <name> are the same name) and put wires between them. It will ignore one side.
 |}
 
-== Slack Toggle ==
+=== Slack Toggle ===
 {|
 ! Options in Pen Mode
 ! Options in Span Modes
@@ -99,4 +100,8 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 <br clear="left"/>
 
 == Credits ==
-[[https://github.com/stravant|stravant]] for the [[/src/modules/SharedToolbar.lua|SharedToolbar]] module
+[[https://github.com/stravant|stravant]] for [[/src/req/SharedToolbar.module.lua|SharedToolbar]]
+
+[[https://devforum.roblox.com/u/spynaz|Spynaz]] for [[/src/req/DraggableObject.module.lua|DraggableObject]]
+
+[[https://github.com/evaera|evaera]] for [[/src/req/Promise.module.lua|Promise]] [[https://github.com/evaera/roblox-lua-promise|roblox-lua-promise]]
