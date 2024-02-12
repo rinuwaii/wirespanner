@@ -43,6 +43,18 @@ local TWS = game:GetService("TweenService")
 local UIEffects   = {}
 
 -----------------------------------------------------------
+---- stuff ----------------------------------------
+-----------------------------------------------------------
+
+local function multiTweenObject(obj, name, goal, dir, style, len)
+	for _,o in pairs(obj:GetChildren()) do
+		if o.Name == name then
+			UIEffects.tween(o, goal, dir, style, len)
+		end
+	end
+end
+
+-----------------------------------------------------------
 ----  global utilities that are useful --------------------
 -----------------------------------------------------------
 
@@ -76,17 +88,17 @@ UIEffects.button = function(object, colored, altClick, altEvent, clickFunc:()->(
 		mouseIn = true
 		UIEffects.tween(object.background, {Size = UDim2.new(1,3,1,3)}, 'InOut', 'Quint', 0.1)
 
-		if colored then
-			UIEffects.tween(object.background.hover, {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
+		if colored then 
+			multiTweenObject(object.background, 'hover', {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
 		else
-			UIEffects.tween(object.background.hover, {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
+			multiTweenObject(object.background, 'hover', {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
 		end
 	end)
 
 	object.MouseLeave:Connect(function()
 		mouseIn = false
 		UIEffects.tween(object.background, {Size = UDim2.new(1,0,1,0)}, 'InOut', 'Quint', 0.1)
-		UIEffects.tween(object.background.hover, {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
+		multiTweenObject(object.background, 'hover', {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
 	end)
 
 	UIS.InputBegan:Connect(function(input)
@@ -117,22 +129,6 @@ UIEffects.multiSelect = function(objects, hoverColored, selectColored, valName, 
 	local buttonEvents = {}
 
 	---- reset to default
-	local function reset()
-		for _,o in pairs(objects) do
-			UIEffects.tween(o.background.select, {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
-		end
-		if default then
-			if selectColored then
-				UIEffects.tween(default.background.select, {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
-			else
-				UIEffects.tween(default.background.select, {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
-			end
-			valLocation:SetAttribute(valName, default.Name)
-
-		else valLocation:SetAttribute(valName, nil) end
-	end
-	local resetEvent = Instance.new('BindableEvent')
-	resetEvent.Event:Connect(reset)
 
 	---- set default value up
 	if default then valLocation:SetAttribute(valName, default.Name)
@@ -141,23 +137,24 @@ UIEffects.multiSelect = function(objects, hoverColored, selectColored, valName, 
 	---- set up buttons
 	for i, o in ipairs(objects) do
 		local event = Instance.new('BindableEvent')
+		event.Name = o.Name..'_Event'
 
 		UIEffects.button(o, hoverColored, false, false, function()
 			if valLocation:GetAttribute(valName) == o.Name then
-				reset()
+				--reset()
 
 			else
 				event:Fire()
 				o.background:TweenSize(UDim2.new(1,0,1,0), "InOut", "Quint", 0.1, true)
 
 				for _,o2 in pairs(objects) do
-					UIEffects.tween(o2.background.select, {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
+					multiTweenObject(o2.background, 'select', {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
 				end
 
 				if selectColored then
-					UIEffects.tween(o.background.select, {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
+					multiTweenObject(o.background, 'select', {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
 				else
-					UIEffects.tween(o.background.select, {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
+					multiTweenObject(o.background, 'select', {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
 				end
 
 				valLocation:SetAttribute(valName, o.Name)
@@ -166,9 +163,38 @@ UIEffects.multiSelect = function(objects, hoverColored, selectColored, valName, 
 		end)
 		table.insert(buttonEvents, event)
 	end
+	
+	local rt = {}
+	
+	rt.reset = function()
+		for _,o in pairs(objects) do
+			multiTweenObject(o.background, 'select', {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
+		end
+		if default then
+			if selectColored then
+				multiTweenObject(default.background, 'select', {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
+			else
+				multiTweenObject(default.background, 'select', {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
+			end
+			valLocation:SetAttribute(valName, default.Name)
 
-	reset()
-	return buttonEvents, resetEvent
+		else valLocation:SetAttribute(valName, nil) end
+	end
+	
+	rt.force = function(obj)
+		for _,o in pairs(objects) do
+			multiTweenObject(o.background, 'select', {BackgroundTransparency = 1}, 'InOut', 'Quint', 0.2)
+		end
+		
+		if selectColored then multiTweenObject(obj.background, 'select', {BackgroundTransparency = 0}, 'InOut', 'Quint', 0.2)
+		else multiTweenObject(obj.background, 'select', {BackgroundTransparency = 0.7}, 'InOut', 'Quint', 0.2)
+		end
+		valLocation:SetAttribute(valName, obj.Name)
+	end
+	
+	rt.reset()
+	
+	return rt, unpack(buttonEvents)
 end
 
 UIEffects.textBoxMustBeNum = function(object, reqLen, maxNumber, minNumber, nextObject)

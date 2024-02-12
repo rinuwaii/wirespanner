@@ -260,10 +260,10 @@ return {
 		UpdateAllValues('', oldColor)
 		
 		local newColor = nil
-		conns[#conns+1] = uifx.button(pickBtn, false).Event:Connect(function()
+		conns[#conns+1] = uifx.button(pickBtn, true).Event:Connect(function()
 			newColor = newPreview.BackgroundColor3
 		end)
-		conns[#conns+1] = uifx.button(cancelBtn, false).Event:Connect(function()
+		conns[#conns+1] = uifx.button(cancelBtn, true).Event:Connect(function()
 			newColor = oldColor
 		end)
 		
