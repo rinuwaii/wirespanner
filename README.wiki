@@ -21,7 +21,7 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |-
 |Mode
 |<code>N/A</code>
-|See [[?mode-toggle|Mode Toggle]]
+|See [[#mode-toggle|Mode Toggle]]
 |- 
 ! scope="row" colspan="3" | Wire
 |-
@@ -41,7 +41,7 @@ Please do not publish this plugin! It is not finished and it is not yours!!
 |-
 |Slack Mode
 |<code>N/A</code>
-|See [[?slack-toggle|Slack Toggle]]
+|See [[#slack-toggle|Slack Toggle]]
 |-
 |Add Range
 |<code>RopeConstraint.Length</code>
