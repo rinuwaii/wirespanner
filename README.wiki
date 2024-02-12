@@ -1,0 +1,101 @@
+= Wirespanner - A Roblox Studio ropes / wires tool =
+
+{| align="center"
+! scope="row" | WARNING
+! scope="row" | This is not finished yet! Expect issues!
+|}
+
+[https://github.com/rinuwaii/wirespanner/releases/latest Download Beta Here]
+DevForum Link: TBD
+
+Please do not publish this plugin! It is not finished and it is not yours!!
+
+== Options Breakdown ==
+{|
+! Option
+! Property
+! Description
+|-
+|Mode
+|<code>N/A</code>
+|See [[README.wiki#mode-toggle|Mode Toggle]]
+|- 
+! scope="row" colspan="3" | Wire
+|-
+|Color
+|<code>RopeConstraint.Color</code>
+|BrickColor of all segments of the rope. Roblox will find the closest BrickColor to whatever color that gets picked.
+|-
+|Width
+|<code>RopeConstraint.Thickness</code>
+|Width of all segments of the rope.
+|-
+|Add Tags
+|<code>RopeConstraint:AddTags()</code>
+|Tags added on the wires. Useful with CollectionService.
+|-
+! scope="row" colspan="3" | Slack
+|-
+|Slack Mode
+|<code>N/A</code>
+|See [[README.wiki#slack-toggle|Slack Toggle]]
+|-
+|Add Range
+|<code>RopeConstraint.Length</code>
+|The min and max of how much extra length gets added.
+|-
+! scope="row" colspan="3" | Misc
+|-
+|Apply Retroactively
+|<code>N/A</code>
+|Automatically apply changes to wire options to all spans in the current wire.
+|}
+
+== Mode Toggle ==
+{|
+! Mode
+! Description
+|-
+|Pen Mode
+|Click on any part to place an attachment in the part/model, each sequentual point will make a wire between it and the last one.
+|-
+|Span Mode (General)
+|Generally refers to the next two modes. They connect two models with pre named attachments.
+|-
+|Matching
+|Click on two models, and it will find attachments that are named the same in each model and put wires between them.
+|-
+|_A to _B
+|Click on two models, and it will find attachments that are named <name>_A and <name>_B (where <name> are the same name) and put wires between them. It will ignore one side.
+|}
+
+== Slack Toggle ==
+{|
+! Options in Pen Mode
+! Options in Span Modes
+! Description 
+|-
+|Off
+|Off
+|No slack will be added.
+|-
+|On
+|Per Wire
+|A random ammount of slack will be added to each wire in the span between the min and max range. 
+|-
+|<code>N/A</code>
+|Per Span
+|A random ammount of slack will be added, the ammount of slack being the same on each wire per span. 
+|}
+
+== Examples ==
+=== Video ===
+[[File:https://github.com/rinuwaii/wirespanner/assets/36645011/50c856a1-5885-4ecb-8ce4-e9dba30a3237]]
+
+<br clear="left"/>
+=== How to lay out the models ===
+[[File:assets/exampleLayout.png]]
+<br clear="left"/>
+
+== Credits ==
+[[https://github.com/stravant|stravant]] for the [[/src/modules/SharedToolbar.lua|SharedToolbar]] module
