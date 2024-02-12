@@ -1,7 +1,7 @@
 ---------------------------------------------------------
 --[[
 
-	WIRESPANNER vBETA-GH-1
+	WIRESPANNER
 	
 	written by rinuwaii
 	
