@@ -9,7 +9,7 @@ return {
 			local response, data
 			pcall(function()
 				response = HTP:GetAsync(
-					'https://api.github.com/repos/rinuwaii/wirespanner/releases/latest',
+					'https://api.github.com/repos/rinyafii/wirespanner/releases/latest',
 					false,
 					{['X-GitHub-Api-Version'] = '2022-11-28', ['Accept'] = 'application/vnd.github+json'}
 				)

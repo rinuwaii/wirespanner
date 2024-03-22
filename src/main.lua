@@ -1,49 +1,18 @@
 ---------------------------------------------------------
 --[[
 
-	WIRESPANNER
+	WIRESPANNER vBETA-GH-1
 	
-	written by rinuwaii
-	
-	---------------------------------------
-	
-	CHANGELOG
-	
-	v0.2.0 -> Beta 2 (2-11-24) 
-	- renamed normal mode to "pen mode"
-	- renamed model mode to "span matching mode"
-	- redid a lot of the pairing logic to support "span a/b mode"
-		- span a/b is like span matching but instead of finding the exact same point in two models,
-		  it finds <pointName>_A from model A and <pointName>_B from model B and connects them together.
-			- BE CAREFUL!! always face and click on your models so that: 
-				- the first model you click is your "A model" and the second is your "B model"
-				- _A points in your A model are pointing toward your B model
-				- _B points in your B model are pointing toward your A model
-			(eventually ill add toggles to flip these around live, so its not as much of a hassle)
-		
-	- added hover indicators in pen mode
-	- made wire tagging work
-	- added a new option to disable retroactive changes
-	- a lot of ui improvements
-	  - mode switching is now at the top
-	  - replaced the seperate slack toggle and mode options with a single switch button that changes between having two (off/on) and three (off/per wire/per span) options depending on mode
-	  - made the ui draggable
-	  - added a button on the topbar to collapse the window, leaving only the modes and toggle buttton
-	  - added a button to reroll the random slack that gets added
-	- added auto update checks, the plugin will the latest tag from github if it doesnt match the one it has it will prompt to update. 
-	  the github request is only done once per session (on place load)
-	
-	----
-	
-	v0.1.0 -> Beta 1 (2-7-24) 
-	- initial (beta) release to github and Cube Studios developers
+	written by rin
 
 ]]
 ---------------------------------------------------------
 ---- VARS
 
-local _vNum = '0.2.0'
-local _vTxt = 'Beta 2'
+if not game:GetService('RunService'):IsEdit() then return end 
+
+local _vNum = '1.0.0'
+local _vTxt = 'R1'
 
 -- services
 local CHS = game:GetService("ChangeHistoryService")
@@ -60,7 +29,7 @@ ui:SetAttribute('uiOpen', false)
 -- modules
 local UIFX = require(script.req.kagaUIFX)
 local tools = require(script.req.nijiTools)
-local pluginEvents = require(script.req.ModularPluginEvents)(ui, plugin)
+local pluginEvents = require(script.req.ModularPluginEvents)(ui, plugin, 'Wirespanner', 'rbxassetid://16326291280', 'Easily place down spans of wire!')
 local colorPicker = require(script.req.RinPickApi)
 local draggableObject = require(script.req.DraggableObject)
 
