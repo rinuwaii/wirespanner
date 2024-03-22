@@ -4,7 +4,7 @@ __NOTOC__
 
 [[https://github.com/rinuwaii/wirespanner/releases/latest|Download Here]]
 
-DevForum Link: TBD
+[[https://devforum.roblox.com/t/wirespanner-plugin-easily-make-spans-of-wire/2884799|DevForum Link]]
 
 [[https://github.com/rinuwaii/wirespanner/wiki|View the wiki to learn more about the options]]
 
