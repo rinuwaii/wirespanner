@@ -12,6 +12,8 @@ DevForum Link: TBD
 
 Please do not publish this plugin! It is not finished and it is not yours!!
 
+[[File:assets/example.png]]
+
 == Options Breakdown ==
 === Main ===
 {|
