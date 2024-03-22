@@ -8,6 +8,8 @@ DevForum Link: TBD
 
 [[https://github.com/rinuwaii/wirespanner/wiki|View the wiki to learn more about the options]]
 
+[[File:assets/examplepoles.rbxm|Download example poles]]
+
 [[File:assets/example.png]]
 
 == Credits ==
