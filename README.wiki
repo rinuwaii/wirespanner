@@ -6,9 +6,9 @@ __NOTOC__
 
 DevForum Link: TBD
 
-[[File:assets/example.png]]
-
 [[https://github.com/rinuwaii/wirespanner/wiki|View the wiki to learn more about the options]]
+
+[[File:assets/example.png]]
 
 == Credits ==
 [[https://github.com/stravant|stravant]] for [[/src/req/SharedToolbar.module.lua|SharedToolbar]]
